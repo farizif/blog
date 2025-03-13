@@ -1,13 +1,16 @@
 baseURL = 'https://farizifs.com/'
 languageCode = 'en-us'
 title = 'Farizi`s Blog'
-theme = 'typo'
 
 [taxonomies]
 tag = 'tags'
 
 # Google analytics code
 googleAnalytics = "G-xxxxxxxxx"
+
+[module]
+[[module.imports]]
+path = "github.com/tomfran/typo"
 
 [params]
 # Meta description

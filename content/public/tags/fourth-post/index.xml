@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fourth Post on Farizi`s Blog</title>
+    <link>https://farizifs.com/tags/fourth-post/</link>
+    <description>Recent content in Fourth Post on Farizi`s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://farizifs.com/tags/fourth-post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Back-End</title>
+      <link>https://farizifs.com/posts/fourth-post/</link>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://farizifs.com/posts/fourth-post/</guid>
+      <description>Back-End Part of Building my Personal Website.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://farizifs.com//favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://farizifs.com//favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://farizifs.com//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://farizifs.com//android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://farizifs.com//apple-touch-icon.png">
+
+<meta name="description" content="Covering the Back-End Part of Website Building"/>
+
+
+
+<title>
+    
+    Back-End | Farizi`s Blog
+    
+</title>
+
+<link rel="canonical" href="https://farizifs.com/content/posts/fourth-post/"/>
+
+<meta property="og:url" content="https://farizifs.com/content/posts/fourth-post/">
+  <meta property="og:site_name" content="Farizi`s Blog">
+  <meta property="og:title" content="Back-End">
+  <meta property="og:description" content="Covering the Back-End Part of Website Building">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="content">
+    <meta property="article:published_time" content="2025-01-10T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-10T00:00:00+00:00">
+    <meta property="article:tag" content="Experiment">
+    <meta property="article:tag" content="Fourth Post">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.e6ec16899ab55156496921e052875c12e03cd77f30d9cd9bd77d16f513390b60.css" media="all">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+<body class="light">
+
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">
+        <a href="https://farizifs.com/">Farizi`s Blog</a>
+    </h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                /home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts" >
+                /posts
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/about" >
+                /about
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/books" >
+                /books
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+    </header>
+
+    <main class="main">
+      
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/content/">Contents</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/content/posts/fourth-post/">Back-End</a>
+</div>
+
+
+
+<div  class="autonumber" >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">Back-End</h1>
+    
+    <p class="single-summary">Back-End Part of Building my Personal Website.</p>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-01-10T00:00:00&#43;00:00">January 10, 2025</time>
+      
+
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#create-database">Create Database</a></li>
+    <li><a href="#create-lambda-function">Create Lambda Function</a></li>
+    <li><a href="#configure-lambda-function-cors">Configure Lambda Function CORS</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#create-javascript-counter">Create Javascript Counter</a></li>
+    <li><a href="#final-architecture">Final Architecture</a></li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <p>The main goal of the Cloud Resume Challenge is to utilize a wide range of AWS services in our project. While it is actually <em>enough</em> to operate a functional blog using only the infrastructure built in the first leg of this challenge, the project encourages us to test our endurance by creating a simple back-end system to count the number of visitors to our blog.</p>
+<p>According to the CRC handbook, this section involves building and linking several key AWS services, such as API Gateway, DynamoDB, and Lambda. However, given the minuscule scale of my project, which doesn’t require many advanced features of API Gateway, I decided to use a Lambda Function URL instead. Considering the scale of my project, I believe using Function URL is also more straightforward and cost-effective compared to API Gateway.</p>
+<h2 class="heading" id="create-database">
+  Create Database
+  <a class="anchor" href="#create-database">#</a>
+</h2>
+<p>First of all, we need to create a DynamoDB table to store the number of visitors to our website. Then, assign the table an appropriate name and partition key.</p>
+<p>To store our future website&rsquo;s visitor data, we can add an additional value inside the table.</p>
+<h2 class="heading" id="create-lambda-function">
+  Create Lambda Function
+  <a class="anchor" href="#create-lambda-function">#</a>
+</h2>
+<p>For me, this part is the trickiest step of the Cloud Resume Challenge because it requires writing and testing a Lambda function from scratch multiple times until it finally works. As we all know, one of the most important skills to have in the IT world is the ability to Google well. It’s hard to fully rely on our coding skills alone, so leveraging other people&rsquo;s experience and &ldquo;suffering&rdquo; (yes, I mean Stack Overflow) is invaluable. Additionally, it’s perfectly fine to use generative AI to review and improve your code.</p>
+<p>After many hours of exploring and testing, here is the code I used for my Lambda function:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="font-weight:bold">import</span> <span style="color:#555">json</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">import</span> <span style="color:#555">boto3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">from</span> <span style="color:#555">decimal</span> <span style="font-weight:bold">import</span> Decimal
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dynamodb <span style="font-weight:bold">=</span> boto3<span style="font-weight:bold">.</span>resource(<span style="color:#b84">&#39;dynamodb&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>table <span style="font-weight:bold">=</span> dynamodb<span style="font-weight:bold">.</span>Table(<span style="color:#b84">&#39;INSERT YOUR DYNAMODB TABLE NAME HERE&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">def</span> <span style="color:#900;font-weight:bold">lambda_handler</span>(event, context):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">try</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># Fetch the current views count</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>response <span style="font-weight:bold">=</span> table<span style="font-weight:bold">.</span>get_item(Key<span style="font-weight:bold">=</span>{<span style="color:#b84">&#39;viewer_id&#39;</span>: <span style="color:#b84">&#39;1&#39;</span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">if</span> <span style="color:#b84">&#39;Item&#39;</span> <span style="font-weight:bold">not</span> <span style="font-weight:bold">in</span> response:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">return</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b84">&#34;statusCode&#34;</span>: <span style="color:#099">404</span>,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b84">&#34;body&#34;</span>: json<span style="font-weight:bold">.</span>dumps({<span style="color:#b84">&#34;msg&#34;</span>: <span style="color:#b84">&#34;Viewer ID not found&#34;</span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># Convert Decimal to int for JSON serialization</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>views <span style="font-weight:bold">=</span> <span style="color:#999">int</span>(response[<span style="color:#b84">&#39;Item&#39;</span>]<span style="font-weight:bold">.</span>get(<span style="color:#b84">&#39;views&#39;</span>, <span style="color:#099">0</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>views <span style="font-weight:bold">+=</span> <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># Update the views count</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>table<span style="font-weight:bold">.</span>update_item(
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Key<span style="font-weight:bold">=</span>{<span style="color:#b84">&#39;viewer_id&#39;</span>: <span style="color:#b84">&#39;1&#39;</span>},
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>UpdateExpression<span style="font-weight:bold">=</span><span style="color:#b84">&#39;SET #v = :val&#39;</span>,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ExpressionAttributeNames<span style="font-weight:bold">=</span>{<span style="color:#b84">&#39;#v&#39;</span>: <span style="color:#b84">&#39;views&#39;</span>},
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ExpressionAttributeValues<span style="font-weight:bold">=</span>{<span style="color:#b84">&#39;:val&#39;</span>: views}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">return</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b84">&#34;statusCode&#34;</span>: <span style="color:#099">200</span>,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b84">&#34;body&#34;</span>: json<span style="font-weight:bold">.</span>dumps({
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b84">&#34;msg&#34;</span>: <span style="color:#b84">&#34;Hello from Lambda!&#34;</span>,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b84">&#34;views&#34;</span>: views <span style="color:#998;font-style:italic"># Now it&#39;s an int, which JSON can serialize</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">except</span> <span style="color:#900;font-weight:bold">Exception</span> <span style="font-weight:bold">as</span> e:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#999">print</span>(<span style="color:#b84">f</span><span style="color:#b84">&#34;Error: </span><span style="color:#b84">{</span><span style="color:#999">str</span>(e)<span style="color:#b84">}</span><span style="color:#b84">&#34;</span>) <span style="color:#998;font-style:italic"># Added logging</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">return</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b84">&#34;statusCode&#34;</span>: <span style="color:#099">500</span>,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b84">&#34;body&#34;</span>: json<span style="font-weight:bold">.</span>dumps({<span style="color:#b84">&#34;error&#34;</span>: <span style="color:#999">str</span>(e)})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Since the Cloud Resume Challenge is quite popular among newcomers in cloud computing, there are several code snippets available online. We can adapt and improve them according to our needs. However, it is crucial to understand what the code does and how we can reproduce it in future projects.</p>
+<h2 class="heading" id="configure-lambda-function-cors">
+  Configure Lambda Function CORS
+  <a class="anchor" href="#configure-lambda-function-cors">#</a>
+</h2>
+<p>Considering the scale of my website, I decided to use a Lambda Function URL rather than API Gateway. Therefore, I needed to configure the Cross-Origin Resource Sharing (CORS) settings of my function directly in the function’s configuration pane before pasting the Function URL into my JavaScript file.</p>
+<p>The purpose of CORS is to allow specific origin(s) to access a resource—like a Lambda function—through an HTTP-header-based mechanism. To set this up, I specified two versions of my website&rsquo;s address (<a href="https://www.farizifs.com">https://www.farizifs.com</a> and <a href="https://farizifs.com">https://farizifs.com</a>) in the Function URL&rsquo;s CORS configuration. This ensures the Function URL only executes after verifying that the request originates from my website.</p>
+<h1 class="heading" id="linking-front-end-and-back-end">
+  Linking Front-End and Back-End
+  <a class="anchor" href="#linking-front-end-and-back-end">#</a>
+</h1>
+<p>With the two integral parts of the website now complete, the next step is to link them together.</p>
+<h2 class="heading" id="create-javascript-counter">
+  Create Javascript Counter
+  <a class="anchor" href="#create-javascript-counter">#</a>
+</h2>
+<p>The next step is to create a JavaScript file that uses the Lambda function to count, extract, and update the number of visitors, and then reflect that number in the HTML element. This part requires ample time for writing and testing the JavaScript counter file, but I found it less complicated than writing the Python script for the back-end. Once again, Google, Stack Overflow, and (sometimes) LLM chatbots will be your best friends.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="font-weight:bold">const</span> counter <span style="font-weight:bold">=</span> <span style="color:#999">document</span>.querySelector(<span style="color:#b84">&#34;.counter-number&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">async</span> <span style="font-weight:bold">function</span> updateCounter() {
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">let</span> response <span style="font-weight:bold">=</span> <span style="font-weight:bold">await</span> fetch(<span style="color:#b84">&#34;PUT YOUR FUNCTION URL HERE/&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">let</span> data <span style="font-weight:bold">=</span> <span style="font-weight:bold">await</span> response.json();
+</span></span><span style="display:flex;"><span>        counter.innerHTML <span style="font-weight:bold">=</span> data.views;  <span style="color:#998;font-style:italic">// Assuming your Lambda returns {views: number}
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>    } <span style="font-weight:bold">catch</span> (error) {
+</span></span><span style="display:flex;"><span>        console.log(<span style="color:#b84">&#39;Error:&#39;</span>, error);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>updateCounter();
+</span></span></code></pre></div><p>Setting this up in a typical single-page HTML website is quite straightforward. I just need to include the JavaScript file and reference it in the index.html file to make it work.</p>
+<p>However, since I opted to use Hugo, the process is a bit more complicated:</p>
+<p><strong>First</strong>, place the JavaScript file in the Hugo directory. It’s best to create a dedicated folder for the JS file inside the <em>assets</em> folder in your theme directory.</p>
+<p><strong>Second</strong>, Locate the equivalent of the index.html file in the Hugo directory. In my case, it was baseof.html inside the <em>layouts</em> folder.</p>
+<p><strong>Third</strong>, since I wanted the counter in the footer section of my website, I pinpointed the footer HTML file. For me, it was footer.html inside the layouts/partials directory. Then, I referenced the JS file within this file.</p>
+<h2 class="heading" id="final-architecture">
+  Final Architecture
+  <a class="anchor" href="#final-architecture">#</a>
+</h2>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="img" src="/content/posts/fourth-post/stage2.png" width="4800px" height="2700px">
+    </div>
+
+    
+</figure>
+</p>
+<p>With the above architecture, I managed to create a fully functional website that incorporates core AWS services and integrates them with a third-party site generator.</p>
+<p>Keep in mind that one of the most important aspects of this project is keeping it as affordable as possible. Apart from spending a few dollars on registering my domain with Route 53, I didn’t incur any other significant expenses.</p>
+<p>If you want to take this project further and experiment with additional AWS services, you can incorporate tools like CloudWatch or WAF. Doing so will be worth it if you’re serious about developing your website further.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/content/posts/second-post/">
+                        Front-End
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  <footer>
+    
+
+    
+    <p>Powered by
+        <a href="https://gohugo.io/">Hugo</a>
+        and
+        <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+    </p>
+    
+    
+    
+
+
+  </footer>
+
+  
+
+</body>
+
+<script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+
+<script defer src="/js/copy-code.js"></script>
+</html>

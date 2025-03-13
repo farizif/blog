@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Farizi`s Blog</title>
+    <link>https://farizifs.com/</link>
+    <description>Recent content in Home on Farizi`s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://farizifs.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Back-End</title>
+      <link>https://farizifs.com/posts/fourth-post/</link>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://farizifs.com/posts/fourth-post/</guid>
+      <description>Back-End Part of Building my Personal Website.</description>
+    </item>
+    <item>
+      <title>Front-End</title>
+      <link>https://farizifs.com/posts/second-post/</link>
+      <pubDate>Tue, 07 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://farizifs.com/posts/second-post/</guid>
+      <description>Front-End Part of Building my Personal Website.</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://farizifs.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://farizifs.com/about/</guid>
+      <description>&lt;p&gt;I got my bachelor&amp;rsquo;s degree in International Relations and was previously employed as an economic analyst in a government agency in &lt;a href=&#34;https://www.lowyinstitute.org/the-interpreter/weeks-living-dangerously-jakarta-all-over-again&#34;&gt;Jakarta, Indonesia&lt;/a&gt;. I left my job as I wanted to pursue higher education. However, the pandemic hit, and I was forced to rethink my plan.&lt;/p&gt;&#xA;&lt;p&gt;During that time, I (and million others) was forced to took a break. So, I built my own drinkware company while actively looking for a chance to switch my career aspiration.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Library</title>
+      <link>https://farizifs.com/books/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://farizifs.com/books/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

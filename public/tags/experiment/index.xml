@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Experiment on Farizi`s Blog</title>
+    <link>https://farizifs.com/tags/experiment/</link>
+    <description>Recent content in Experiment on Farizi`s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://farizifs.com/tags/experiment/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Back-End</title>
+      <link>https://farizifs.com/content/posts/fourth-post/</link>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://farizifs.com/content/posts/fourth-post/</guid>
+      <description>Back-End Part of Building my Personal Website.</description>
+    </item>
+    <item>
+      <title>Front-End</title>
+      <link>https://farizifs.com/content/posts/second-post/</link>
+      <pubDate>Tue, 07 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://farizifs.com/content/posts/second-post/</guid>
+      <description>Front-End Part of Building my Personal Website.</description>
+    </item>
+  </channel>
+</rss>
